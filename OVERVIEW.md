@@ -53,30 +53,32 @@ Visual SLAM / Visual Odometry
 
 3.2 State Estimation
 Estimates the drone's pose using sensor fusion.
-State Vector
-x=[x,y,z,vx,vy,vz,qw,qx,qy,qz,ba,bg]
-x = [x, y, z, v_x, v_y, v_z, q_w, q_x, q_y, q_z, b_a, b_g]
-x=[x,y,z,vx​,vy​,vz​,qw​,qx​,qy​,qz​,ba​,bg​]
 
+State Vector
+
+x=[x,y,z,vx,vy,vz,qw,qx,qy,qz,ba,bg]
+
+x = [x, y, z, v_x, v_y, v_z, q_w, q_x, q_y, q_z, b_a, b_g]
+
+x=[x,y,z,vx​,vy​,vz​,qw​,qx​,qy​,qz​,ba​,bg​]
 
 $x, y, z$ → position
 
-
 $v_x, v_y, v_z$ → velocity
 
-
 $q_w, q_x, q_y, q_z$ → orientation (quaternion)
-
 
 $b_a, b_g$ → IMU biases
 
 
-
 3.3 Flight Controller
 Stabilizes the drone using feedback control.
+
 PID Control Law
 
-u(t)=Kpe(t)+Kdde(t)dt+Ki∫e(t)dtu(t) = K_p e(t) + K_d \frac{de(t)}{dt} + K_i \int e(t) dtu(t)=Kp​e(t)+Kd​dtde(t)​+Ki​∫e(t)dt
+
+
+u(t) = Kₚ e(t) + K_d (de(t)/dt) + Kᵢ ∫ e(t) dt
 
 3.4 Planning & Navigation
 
@@ -136,6 +138,7 @@ Visual odometry
 
 
 Data Representation
+
 I∈RH×W×3I \in \mathbb{R}^{H \times W \times 3}I∈RH×W×3
 
 
@@ -189,9 +192,9 @@ R=f(range,velocity,angle)R = f(\text{range}, \text{velocity}, \text{angle})R=f(r
 
 4.4 IMU (Inertial Measurement Unit)
 Measurements
+
 a=(ax,ay,az),ω=(ωx,ωy,ωz)
-a = (a_x, a_y, a_z), \quad \omega = (\omega_x, \omega_y, \omega_z) 
-a=(ax​,ay​,az​),ω=(ωx​,ωy​,ωz​)
+
 
 
 $a$ → linear acceleration
@@ -212,7 +215,7 @@ Latitude, Longitude, Altitude
 
 4.6 Barometer
 Relation
-h∝log⁡(Patm)h \propto \log(P_{atm})h∝log(Patm​)
+h∝log(Pₐₜₘ)
 
 
 Used for altitude estimation
@@ -221,8 +224,7 @@ Used for altitude estimation
 
 4.7 Magnetometer
 Data
-m=(mx,my,mz)m = (m_x, m_y, m_z)m=(mx​,my​,mz​)
-
+m = (mₓ, mᵧ, m_z)
 
 Used for heading estimation
 
@@ -366,7 +368,7 @@ Output
 Pose:
 
 
-(x,y,z,orientation)(x, y, z, \text{orientation})(x,y,z,orientation)
+(x,y,z,orientation)
 
 🎯 10. Interview Talking Points
 
@@ -416,29 +418,19 @@ Drone perception relies on multi-sensor fusion
 
 Core sensors:
 
-
 Camera
-
 
 LiDAR
 
-
 IMU
-
 
 GPS
 
-
-
-
 Fusion approaches:
-
 
 EKF
 
-
 Factor graph optimization
-
 
 Deep learning
 
