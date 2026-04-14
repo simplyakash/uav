@@ -4,7 +4,8 @@ A structured overview for Drone Perception Engineer (Computer Vision + Sensor Fu
 🛰️ 1. Drone System Overview
 A drone (UAV) is a cyber-physical system that integrates sensing, computation, and control.
 Core Loop
-Sense→Perceive→Estimate→Plan→Control\text{Sense} \rightarrow \text{Perceive} \rightarrow \text{Estimate} \rightarrow \text{Plan} \rightarrow \text{Control}Sense→Perceive→Estimate→Plan→Control
+Sense→Perceive→Estimate→Plan→Control
+
 
 🧩 2. System Architecture
 
@@ -53,7 +54,9 @@ Visual SLAM / Visual Odometry
 3.2 State Estimation
 Estimates the drone's pose using sensor fusion.
 State Vector
-x=[x,y,z,vx,vy,vz,qw,qx,qy,qz,ba,bg]x = [x, y, z, v_x, v_y, v_z, q_w, q_x, q_y, q_z, b_a, b_g]x=[x,y,z,vx​,vy​,vz​,qw​,qx​,qy​,qz​,ba​,bg​]
+x=[x,y,z,vx,vy,vz,qw,qx,qy,qz,ba,bg]
+x = [x, y, z, v_x, v_y, v_z, q_w, q_x, q_y, q_z, b_a, b_g]
+x=[x,y,z,vx​,vy​,vz​,qw​,qx​,qy​,qz​,ba​,bg​]
 
 
 $x, y, z$ → position
@@ -72,6 +75,7 @@ $b_a, b_g$ → IMU biases
 3.3 Flight Controller
 Stabilizes the drone using feedback control.
 PID Control Law
+
 u(t)=Kpe(t)+Kdde(t)dt+Ki∫e(t)dtu(t) = K_p e(t) + K_d \frac{de(t)}{dt} + K_i \int e(t) dtu(t)=Kp​e(t)+Kd​dtde(t)​+Ki​∫e(t)dt
 
 3.4 Planning & Navigation
@@ -156,7 +160,11 @@ Obstacle detection
 
 
 Point Cloud Representation
-P={(x,y,z,i)}P = \{(x, y, z, i)\}P={(x,y,z,i)}
+
+P={(x,y,z,i)}
+
+P = \{(x, y, z, i)\}
+P={(x,y,z,i)}
 
 
 $x, y, z$ → spatial coordinates
@@ -181,7 +189,9 @@ R=f(range,velocity,angle)R = f(\text{range}, \text{velocity}, \text{angle})R=f(r
 
 4.4 IMU (Inertial Measurement Unit)
 Measurements
-a=(ax,ay,az),ω=(ωx,ωy,ωz)a = (a_x, a_y, a_z), \quad \omega = (\omega_x, \omega_y, \omega_z)a=(ax​,ay​,az​),ω=(ωx​,ωy​,ωz​)
+a=(ax,ay,az),ω=(ωx,ωy,ωz)
+a = (a_x, a_y, a_z), \quad \omega = (\omega_x, \omega_y, \omega_z) 
+a=(ax​,ay​,az​),ω=(ωx​,ωy​,ωz​)
 
 
 $a$ → linear acceleration
@@ -277,7 +287,9 @@ Used in SLAM systems
 
 🧠 6. Sensor Synchronization
 Time Alignment
+
 taligned=t+Δtt_{aligned} = t + \Delta ttaligned​=t+Δt
+
 Methods
 
 
@@ -297,7 +309,11 @@ Dataset TypeFormatImagesPNG / JPEGLiDARBIN / PCDLogsROS Bag (.bag)MetadataJSON /
 
 ⚙️ 8. System Design Considerations
 Latency
-Ttotal=Tsensor+Tcompute+TfusionT_{total} = T_{sensor} + T_{compute} + T_{fusion}Ttotal​=Tsensor​+Tcompute​+Tfusion​
+Ttotal=Tsensor+Tcompute+Tfusion  
+
+T_{total} = T_{sensor} + T_{compute} + T_{fusion}   
+
+Ttotal​=Tsensor​+Tcompute​+Tfusion​
 
 Bandwidth
 
@@ -370,6 +386,7 @@ Extrinsic transformation
 
 
 Example Extrinsic Transform
+
 TlidarcameraT^{camera}_{lidar}Tlidarcamera​
 
 
