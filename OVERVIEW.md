@@ -83,7 +83,15 @@ u(t) = Kₚ e(t) + K_d (de(t)/dt) + Kᵢ ∫ e(t) dt
 3.4 Planning & Navigation
 
 
-Path planning: A*, RRT, MPC
+Path planning: 
+
+A*(Graph-based search using cost + heuristic), 
+
+Dijkstra’s Algorithm (Special case  of A* gurantees shortest path)
+
+RRT  (Rapidly-exploring Random Tree- Randomly sample space and build a tree)
+
+MPC (Model Predictive Control -Optimize trajectory over time horizon)
 
 
 Obstacle avoidance
