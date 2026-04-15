@@ -5,21 +5,23 @@ A clear, interview-ready comparison of the three core perception sensors.
 🧠 1. High-Level Intuition
 Camera → “What is it?” (semantics)
 
-LiDAR → “Where is it?” (precise geometry)
+LiDAR → “Where is it?” (precise geometry) Point Cloud Representation P={(x,y,z,i)}
 
-Radar → “How is it moving?” (velocity + robustness)
+Radar → “How is it moving?” (velocity + robustness) R=f(range,velocity,angle)
 
 📊 2. Comparison Table
-Feature	Camera	LiDAR	Radar
-Output	Images	Point Cloud	Range + Velocity + Angle
-Data Type	2D (RGB)	3D (x, y, z)	Sparse measurements
-Depth	Indirect (ML/stereo)	Direct (accurate)	Direct (coarse)
-Velocity	❌	❌	✅ (Doppler)
-Range	Medium	Medium–High	Very High
-Accuracy	High (semantics)	High (geometry)	Medium
-Weather Robustness	❌	⚠️	✅
-Lighting Dependency	High	Low	None
-Cost	Low	High	Medium
+| Feature             | Camera               | LiDAR             | Radar                    |
+| ------------------- | -------------------- | ----------------- | ------------------------ |
+| Output              | Images               | Point Cloud       | Range + Velocity + Angle |
+| Data Type           | 2D (RGB)             | 3D (x, y, z)      | Sparse measurements      |
+| Depth               | Indirect (ML/stereo) | Direct (accurate) | Direct (coarse)          |
+| Velocity            | ❌                    | ❌                 | ✅ (Doppler)              |
+| Range               | Medium               | Medium–High       | Very High                |
+| Accuracy            | High (semantics)     | High (geometry)   | Medium                   |
+| Weather Robustness  | ❌                    | ⚠️                | ✅                        |
+| Lighting Dependency | High                 | Low               | None                     |
+| Cost                | Low                  | High              | Medium                   |
+
 
 📷 3. Camera
 What it Provides
